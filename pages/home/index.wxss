@@ -1,0 +1,51 @@
+/* pages/home/index.wxss */
+.canvasbox{
+  background: #EEEEEE;
+  position: relative;
+  padding: 0 20rpx;
+}
+.canvasitem{
+  font-size: 24rpx;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+}
+.circular{
+  border-radius: 500%;
+  /* background-color: red; */
+  border: 1rpx solid red;
+}
+.canvasitem:nth-child(odd){
+  animation: haha 5s infinite;
+} 
+ 
+ 
+.canvasitem:nth-child(even){
+  animation: ha 12s infinite;
+} 
+@keyframes ha{
+  0%{transform: scale(1)}
+  50%{transform: scale(1.5)}
+  100%{transform: scale(1)}
+}
+@keyframes haha{
+  0%{transform: scale(1)}
+  50%{transform: scale(1.2)}
+  100%{transform: scale(1)}
+}
+.shade{
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 50rpx;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.8);
+  opacity: 0.5;
+  overflow: hidden;
+  text-align: center;
+} 

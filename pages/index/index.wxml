@@ -1,0 +1,59 @@
+​
+<view class="container">
+  <view class="calendar-container">
+    <!-- 年月的显示 -->
+    <view class="calendar-container-header">
+      <view class="date-text">{{year}}年{{month}}月</view>
+      <view class="btn-box">
+        <view class="btn preBtn" bindtap="changeMonth" data-type="pre"></view>
+        <view class="btn nextBtn" bindtap="changeMonth" data-type="next"></view>
+      </view>
+    </view>
+    <!-- 日期的显示 -->
+    <view class="calendar-container-body">
+      <!-- 显示星期 -->
+      <view class="calendar-week">
+        <view class="calendar-week-item" wx:for="{{weeksArr}}" wx:key="index">{{item}}</view>
+      </view>
+      <!-- 显示日期 -->
+      <view class="calendar-days">
+        <!-- 上个月的日期 -->
+        <view class="days-item last-days-item" wx:for='{{lastMonthDays}}' wx:key='item' bindtap="selectDate" data-time="{{item.time}}" data-type="lastMonthDays" data-index="{{index}}">
+          <view class="{{item.isNowMonthDay}}">
+          {{item.date}}
+          </view>
+        <view style="height: 50rpx;font-size: 50rpx;letter-spacing: -13rpx;">
+        <text wx:if="{{item.greendot}}" style="color: #a2d18f;">·</text>
+        <text wx:if="{{item.reddot}}" style="color: #e6a75f;">·</text>
+        </view>
+        </view>
+ 
+        <!--当月的日期-->
+        <view class="days-item" wx:for='{{nowMonthDays}}' wx:key='index' bindtap="selectDate" data-item="{{item}}"  data-type="nowMonthDays" data-index="{{index}}">
+          <view class="{{item.isNowMonthDay}}">
+          {{item.date}}
+          </view>
+        <view style="height: 50rpx;font-size: 50rpx;letter-spacing: -13rpx;">
+        <text wx:if="{{item.greendot}}" style="color: #a2d18f;">·</text>
+        <text wx:if="{{item.reddot}}" style="color: #e6a75f;">·</text>
+        </view>
+        </view>
+ 
+        <!--下个月的日期-->
+        <view class="days-item next-days-item" wx:for='{{nextMonthDays}}' wx:key='item' bindtap="selectDate" data-item="{{item}}"  data-type="nextMonthDays" data-index="{{index}}">
+          <view class="{{item.isNowMonthDay}}">
+          {{item.date}}
+          </view>
+        <view style="height: 50rpx;font-size: 50rpx;letter-spacing: -13rpx;">
+        <text wx:if="{{item.greendot}}" style="color: #a2d18f;">·</text>
+        <text wx:if="{{item.reddot}}" style="color: #e6a75f;">·</text>
+        </view>
+        </view>
+      </view>
+    </view>
+  </view>
+<view class="determine" bindtap="determines">确定</view>
+</view>
+
+ 
+​

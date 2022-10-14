@@ -1,0 +1,10 @@
+<!--pages/home/index.wxml-->
+<view>
+  <view class="canvasbox" style="width: {{windowWidth}}px; height:{{windowHeight}}px;">
+    <view class="canvasitem" bindtap='show' data-index="{{index}}" style="top: {{item.www}}px;left: {{item.hhh}}px;" wx:for="{{lists}}" wx:item="item" wx:key="index">
+      <view class="circular" style="width: {{item.size}}rpx;height: {{item.size}}rpx;"></view>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+  <view class="shade" style="line-height: {{windowHeight}}px;"  wx:if="{{shows}}" bindtap='close'>{{lists[index].name}}</view>
+</view>
